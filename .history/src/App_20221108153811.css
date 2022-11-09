@@ -1,0 +1,15 @@
+h1{
+  text-align: center;
+}
+
+input {
+  text-align: center;
+}
+
+.textbox{
+  text-align: center;
+}
+
+button {
+  border-radius: 0 2 2 0;
+}
