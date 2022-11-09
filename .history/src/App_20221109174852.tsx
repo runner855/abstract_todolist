@@ -68,7 +68,7 @@ export const App = () => {
                       (obj) => obj.id !== item.id
                     );
                     setTasks([
-                      ...removecheckedItem,
+                      removecheckedItem,
                       { ...item, done: !item.done },
                     ]);
                   }}

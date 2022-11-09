@@ -63,15 +63,7 @@ export const App = () => {
                 <input
                   type="checkbox"
                   checked={item.done}
-                  onChange={() => {
-                    const removecheckedItem = tasks.filter(
-                      (obj) => obj.id !== item.id
-                    );
-                    setTasks([
-                      ...removecheckedItem,
-                      { ...item, done: !item.done },
-                    ]);
-                  }}
+                  onChange={() => setTasks([{ ...item, done: !item.done }])}
                 />
                 {item.task}
 

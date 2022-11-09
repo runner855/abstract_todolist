@@ -69,7 +69,7 @@ export const App = () => {
                     );
                     setTasks([
                       ...removecheckedItem,
-                      { ...item, done: !item.done },
+                      (item = { done: true : false }),
                     ]);
                   }}
                 />

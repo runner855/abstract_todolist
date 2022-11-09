@@ -24,10 +24,9 @@ export const App = () => {
 
   // const removeTask = tasks.filter((id) => id);
 
-  const removeTask = (id: number) => {
-    const filtered = tasks.filter((item) => item.id !== id);
-    setTasks(filtered);
-  };
+  const removeTask = () => {
+    tasks.filter(() =>  )
+  }
 
   return (
     <div className="App">
@@ -63,20 +62,12 @@ export const App = () => {
                 <input
                   type="checkbox"
                   checked={item.done}
-                  onChange={() => {
-                    const removecheckedItem = tasks.filter(
-                      (obj) => obj.id !== item.id
-                    );
-                    setTasks([
-                      ...removecheckedItem,
-                      { ...item, done: !item.done },
-                    ]);
-                  }}
+                  onChange={() => setTasks([{ ...item, done: !item.done }])}
                 />
                 {item.task}
 
-                <div className="delete" onClick={() => removeTask(item.id)}>
-                  <RiDeleteBin5Fill />
+                <div className="delete">
+                  <RiDeleteBin5Fill onClick={removeTask} />
                 </div>
               </div>
             );
