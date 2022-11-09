@@ -36,7 +36,7 @@ export const App = () => {
           <button
             className="addtask"
             onClick={() => {
-              setTasks([...tasks, { task: value, done: false }]);
+              setTasks([...tasks, { task: value, done: checked }]);
               setValue("");
             }}
           >
@@ -54,10 +54,10 @@ export const App = () => {
                   onChange={() => setTasks([{ ...item, done: !item.done }])}
                 />
                 {item.task}
-                {item.done}
-                <a className="delete">
+
+                <button className="delete">
                   <RiDeleteBin5Fill onClick={() => console.log("delete")} />
-                </a>
+                </button>
               </div>
             );
           })}

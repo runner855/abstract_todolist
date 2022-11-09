@@ -51,13 +51,13 @@ export const App = () => {
                 <input
                   type="checkbox"
                   checked={item.done}
-                  onChange={() => setTasks([{ ...item, done: !item.done }])}
+                  onChange={() => setTasks([{ ...todos, done: !item.done }])}
                 />
                 {item.task}
-                {item.done}
-                <a className="delete">
+
+                <button className="delete">
                   <RiDeleteBin5Fill onClick={() => console.log("delete")} />
-                </a>
+                </button>
               </div>
             );
           })}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "./Header";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+
 import "./App.css";
 
 export const App = () => {
@@ -11,14 +12,14 @@ export const App = () => {
     },
   ];
 
-  type TodosProps = {
+  type Todos = {
     done: boolean;
     task: string;
   };
 
-  const [value, setValue] = useState<string>("");
+  // const [value, setValue] = useState<string>("");
   // const [list, setList] = useState<string[]>([]);
-  const [tasks, setTasks] = useState<TodosProps[]>(todos);
+  const [tasks, setTasks] = useState<[{}]>(todos);
 
   return (
     <div className="App">
@@ -32,32 +33,27 @@ export const App = () => {
           value={value}
         ></input>
 
-        {
-          <button
-            className="addtask"
-            onClick={() => {
-              setTasks([...tasks, { task: value, done: false }]);
-              setValue("");
-            }}
-          >
-            Submit
-          </button>
-        }
+        <button
+          onClick={() => {
+            setList([...list, value]);
+            setValue("");
+          }}
+        >
+          Submit
+        </button>
 
         <div className="todo-container">
-          {tasks.map((item, index) => {
+          {list.map((item, index) => {
             return (
-              <div className={`single-task `} key={`${item.task}-${index}`}>
+              <div className={`single-task `} key={`${item}-${index}`}>
                 <input
                   type="checkbox"
-                  checked={item.done}
-                  onChange={() => setTasks([{ ...item, done: !item.done }])}
+                  checked={tick}
+                  onChange={() => setTick(!tick)}
                 />
-                {item.task}
-                {item.done}
-                <a className="delete">
-                  <RiDeleteBin5Fill onClick={() => console.log("delete")} />
-                </a>
+                {item}
+
+                <RiDeleteBin5Fill />
               </div>
             );
           })}

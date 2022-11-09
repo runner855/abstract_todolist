@@ -20,6 +20,9 @@ export const App = () => {
   // const [list, setList] = useState<string[]>([]);
   const [tasks, setTasks] = useState<TodosProps[]>(todos);
 
+  console.log(value);
+  console.log(tasks);
+
   return (
     <div className="App">
       <Header />
@@ -55,9 +58,9 @@ export const App = () => {
                 />
                 {item.task}
                 {item.done}
-                <a className="delete">
+                <button className="delete">
                   <RiDeleteBin5Fill onClick={() => console.log("delete")} />
-                </a>
+                </button>
               </div>
             );
           })}

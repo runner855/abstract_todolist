@@ -51,7 +51,7 @@ export const App = () => {
                 <input
                   type="checkbox"
                   checked={item.done}
-                  onChange={() => setTasks([{ ...item, done: !item.done }])}
+                  onChange={() => setTasks([ ...tasks, done: !item.done ])}
                 />
                 {item.task}
                 {item.done}

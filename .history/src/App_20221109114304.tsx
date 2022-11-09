@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "./Header";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+
 import "./App.css";
+import { doesNotMatch } from "assert";
 
 export const App = () => {
   const todos = [
@@ -32,32 +34,27 @@ export const App = () => {
           value={value}
         ></input>
 
-        {
-          <button
-            className="addtask"
-            onClick={() => {
-              setTasks([...tasks, { task: value, done: false }]);
-              setValue("");
-            }}
-          >
-            Submit
-          </button>
-        }
+        {/* <button
+          onClick={() => {
+            setList([...list, value]);
+            setValue("");
+          }}
+        >
+          Submit
+        </button> */}
 
         <div className="todo-container">
-          {tasks.map((item, index) => {
+          {todos.map((item, index) => {
             return (
               <div className={`single-task `} key={`${item.task}-${index}`}>
                 <input
                   type="checkbox"
                   checked={item.done}
-                  onChange={() => setTasks([{ ...item, done: !item.done }])}
+                  onChange={() => setTasks([{ ...item, done: false }])}
                 />
                 {item.task}
-                {item.done}
-                <a className="delete">
-                  <RiDeleteBin5Fill onClick={() => console.log("delete")} />
-                </a>
+
+                <RiDeleteBin5Fill />
               </div>
             );
           })}

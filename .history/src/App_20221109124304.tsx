@@ -55,9 +55,9 @@ export const App = () => {
                 />
                 {item.task}
                 {item.done}
-                <a className="delete">
+                <button className="delete">
                   <RiDeleteBin5Fill onClick={() => console.log("delete")} />
-                </a>
+                </button>
               </div>
             );
           })}

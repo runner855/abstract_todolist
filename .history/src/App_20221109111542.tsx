@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "./Header";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+
 import "./App.css";
+import { doesNotMatch } from "assert";
 
 export const App = () => {
   const todos = [
@@ -28,36 +30,31 @@ export const App = () => {
         <input
           type="text"
           placeholder="Add A New Task"
-          onChange={(e) => setValue(e.target.value)}
-          value={value}
+          onChange={(e) => setTasks(todos)}
+          value={(todos.done, todos.task)}
         ></input>
 
-        {
-          <button
-            className="addtask"
-            onClick={() => {
-              setTasks([...tasks, { task: value, done: false }]);
-              setValue("");
-            }}
-          >
-            Submit
-          </button>
-        }
+        <button
+          onClick={() => {
+            setList([...list, value]);
+            setValue("");
+          }}
+        >
+          Submit
+        </button>
 
         <div className="todo-container">
-          {tasks.map((item, index) => {
+          {list.map((item, index) => {
             return (
-              <div className={`single-task `} key={`${item.task}-${index}`}>
+              <div className={`single-task `} key={`${item}-${index}`}>
                 <input
                   type="checkbox"
-                  checked={item.done}
-                  onChange={() => setTasks([{ ...item, done: !item.done }])}
+                  checked={tick}
+                  onChange={() => setTick(!tick)}
                 />
-                {item.task}
-                {item.done}
-                <a className="delete">
-                  <RiDeleteBin5Fill onClick={() => console.log("delete")} />
-                </a>
+                {item}
+
+                <RiDeleteBin5Fill />
               </div>
             );
           })}
