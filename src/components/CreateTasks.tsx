@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Header } from "./Header";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-import "./App.css";
+import "../styles/CreateTask.css";
 
-export const App = () => {
+export const CreateTasks = () => {
   const todos = [
     {
       id: 1,
@@ -19,10 +18,7 @@ export const App = () => {
   };
 
   const [value, setValue] = useState<string>("");
-  // const [list, setList] = useState<string[]>([]);
   const [tasks, setTasks] = useState<TodosProps[]>(todos);
-
-  // const removeTask = tasks.filter((id) => id);
 
   const removeTask = (id: number) => {
     const filtered = tasks.filter((item) => item.id !== id);
@@ -30,9 +26,8 @@ export const App = () => {
   };
 
   return (
-    <div className="App">
-      <Header />
-      <h1>My Tasks!!</h1>
+    <div className="CreateTask">
+      <div className="title">Create Tasks!!</div>
       <div className="textbox">
         <input
           type="text"
@@ -64,17 +59,14 @@ export const App = () => {
                   type="checkbox"
                   checked={item.done}
                   onChange={() => {
-                    const removecheckedItem = tasks.filter(
-                      (obj) => obj.id !== item.id
-                    );
-                    setTasks([
-                      ...removecheckedItem,
-                      { ...item, done: !item.done },
-                    ]);
+                    const tmp = tasks;
+
+                    tmp[index].done = !item.done;
+
+                    setTasks([...tmp]);
                   }}
                 />
                 {item.task}
-
                 <div className="delete" onClick={() => removeTask(item.id)}>
                   <RiDeleteBin5Fill />
                 </div>

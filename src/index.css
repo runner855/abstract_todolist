@@ -1,13 +1,19 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* ,body{
+  padding:0px;
+  margin:0px;
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+body {
+  
+    background-image: url("https://cdn.pixabay.com/photo/2015/04/22/11/21/to-do-734587_1280.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: content-box;
+    width: 100%;
+    height:100%;
+  
+   
 }
+
