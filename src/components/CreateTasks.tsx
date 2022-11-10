@@ -1,25 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import "../styles/CreateTask.css";
+import { TodosProps } from "./App";
 
-export const CreateTasks = () => {
-  const todos = [
-    {
-      id: 1,
-      done: false,
-      task: "clean your room",
-    },
-  ];
+type CreateTasksProps = {
+  value: string;
+  setValue: (text: string) => void;
+  tasks: TodosProps[];
+  setTasks: (tasks: TodosProps[]) => void;
+};
 
-  type TodosProps = {
-    id: number;
-    done: boolean;
-    task: string;
-  };
-
-  const [value, setValue] = useState<string>("");
-  const [tasks, setTasks] = useState<TodosProps[]>(todos);
-
+export const CreateTasks = ({
+  value,
+  setValue,
+  tasks,
+  setTasks,
+}: CreateTasksProps) => {
   const removeTask = (id: number) => {
     const filtered = tasks.filter((item) => item.id !== id);
     setTasks(filtered);
