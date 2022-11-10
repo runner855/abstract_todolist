@@ -1,6 +1,6 @@
 import React from "react";
-import { RiDeleteBin5Fill } from "react-icons/ri";
 import "../styles/CreateTask.css";
+import { TodoCreator } from "./TodoCreator";
 import { TodosProps } from "./App";
 
 type CreateTasksProps = {
@@ -16,11 +16,6 @@ export const CreateTasks = ({
   tasks,
   setTasks,
 }: CreateTasksProps) => {
-  const removeTask = (id: number) => {
-    const filtered = tasks.filter((item) => item.id !== id);
-    setTasks(filtered);
-  };
-
   return (
     <div className="CreateTask">
       <div className="title">Create Tasks!!</div>
@@ -47,29 +42,10 @@ export const CreateTasks = ({
           </button>
         }
 
-        <div className="todo-container">
-          {tasks.map((item, index) => {
-            return (
-              <div className={`single-task `} key={`${item.task}-${index}`}>
-                <input
-                  type="checkbox"
-                  checked={item.done}
-                  onChange={() => {
-                    const tmp = tasks;
-
-                    tmp[index].done = !item.done;
-
-                    setTasks([...tmp]);
-                  }}
-                />
-                {item.task}
-                <div className="delete" onClick={() => removeTask(item.id)}>
-                  <RiDeleteBin5Fill />
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <TodoCreator
+          tasks={tasks}
+          setTasks={(array: TodosProps[]) => setTasks(array)}
+        />
       </div>
     </div>
   );

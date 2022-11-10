@@ -40,7 +40,15 @@ export const App = () => {
             />
           }
         />
-        <Route path="/tasks-list" element={<TasksList />} />
+        <Route
+          path="/tasks-list"
+          element={
+            <TasksList
+              tasks={tasks}
+              setTasks={(array: TodosProps[]) => setTasks(array)}
+            />
+          }
+        />
       </Routes>
     </div>
   );
