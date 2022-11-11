@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/CreateTask.css";
 import { TodoCreator } from "./TodoCreator";
 import { TodosProps } from "./App";
+import { FcSearch } from "react-icons/fc";
 
 type CreateTasksProps = {
   value: string;
@@ -20,16 +21,17 @@ export const CreateTasks = ({
     <div className="CreateTask">
       <div className="title">Create Tasks!!</div>
       <div className="textbox">
-        <input
-          type="text"
-          placeholder="Add A New Task"
-          onChange={(e) => setValue(e.target.value)}
-          value={value}
-        ></input>
-
-        {
+        <div className="search">
+          <input
+            className="search-input"
+            type="text"
+            onChange={(e) => setValue(e.target.value)}
+            value={value}
+            placeholder={"Create Your Tasks!!"}
+          />
           <button
-            className="addtask"
+            className="search-btn"
+            type="submit"
             onClick={() => {
               setTasks([
                 ...tasks,
@@ -38,11 +40,12 @@ export const CreateTasks = ({
               setValue("");
             }}
           >
-            Submit
+            Submit!
           </button>
-        }
+        </div>
 
         <TodoCreator
+          showElement
           tasks={tasks}
           setTasks={(array: TodosProps[]) => setTasks(array)}
         />

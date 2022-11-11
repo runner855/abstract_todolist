@@ -1,71 +1,114 @@
- .text{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: solid black 1em;
-    
-} 
-
 .text {
-    border: solid black 2px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid black 1em;
 }
 
-.title{
-    text-align: center;
-    margin: 2em 0em 2em 0em;
-    color:beige;
-    font-size: 4em ;
-  }
-  
-  input {
-    text-align: center;
-    border-radius: 0em;
-    margin-bottom: 1em;
-  }
-  
-  .textbox{
-    text-align: center;
-  }
-  
-  .addtask {
-    border-radius: 0em 0.5em 0.5em 0em;
-    height:2.8em;
-    width:5.75em;
-  }
-  
-  a{
-    cursor: pointer;
-  }
-  
-  a:hover{
-    border-radius: solid 0.1em blue;
-   
-  }
-  
-  svg{
-  
-    font-size: 1em;
-    margin-left: 0.2em;
-    display: inline;
-  }
+.text {
+  border: solid black 2px;
+}
 
-  input[type="text"]{
-    height:2.5em;
-    width:18.75em;
-    border-radius: 0.5em 0em 0em 0.5em;
-  }
+.title {
+  text-align: center;
+  margin: 1em 0em 1em 0em;
+  color: beige;
+  font-size: 4em;
+}
 
-  input[type="checkbox"]{
-    box-shadow: 0 0 0 0.1em ;
-    margin-right: 1em;
-    
-    display: inline;
-    height:1.4em;
-  }
+input {
+  text-align: center;
+  border-radius: 0em;
+}
 
-  .single-task {
-    font-size: 2em;
-    color:bisque;
-    display: inline;
-  }
+.textbox {
+  text-align: center;
+}
+
+.addtask {
+  border-radius: 0em 0.5em 0.5em 0em;
+  height: 2.8em;
+  width: 5.75em;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  border-radius: solid 0.1em blue;
+}
+
+input[type="text"] {
+  height: 2.5em;
+  width: 18.75em;
+  border-radius: 0.5em 0em 0em 0.5em;
+}
+
+input[type="checkbox"] {
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: -0.4em;
+  margin-right: 0.9em;
+  height: 9em;
+}
+
+.single-task {
+  font-size: 2em;
+  color: bisque;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input {
+  width: 350px;
+  background: rgba(255, 253, 253, 0.995);
+  border: 2px solid burlywood;
+  font-size: 28px;
+  display: inline-block;
+  outline: none;
+  border-radius: 6px 0 0 6px;
+}
+
+.search-input {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.search-input input {
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+  margin: 0em 0em 2em 0em;
+}
+
+.search-btn {
+  position: relative;
+  border: 2px solid burlywood;
+  background-color: burlywood;
+  color: 000;
+  font-size: 28px;
+  display: inline-block;
+  outline: none;
+  border-radius: 0 6px 6px 0;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+}

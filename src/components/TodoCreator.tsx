@@ -4,11 +4,16 @@ import "../styles/TodoCreator.css";
 import { TodosProps } from "./App";
 
 type TodoCreatorProps = {
+  showElement?: boolean;
   tasks: TodosProps[];
   setTasks: (tasks: TodosProps[]) => void;
 };
 
-export const TodoCreator = ({ tasks, setTasks }: TodoCreatorProps) => {
+export const TodoCreator = ({
+  tasks,
+  setTasks,
+  showElement,
+}: TodoCreatorProps) => {
   const removeTask = (id: number) => {
     const filtered = tasks.filter((item) => item.id !== id);
     setTasks(filtered);
@@ -18,21 +23,25 @@ export const TodoCreator = ({ tasks, setTasks }: TodoCreatorProps) => {
       {tasks.map((item, index) => {
         return (
           <div className={`single-task `} key={`${item.task}-${index}`}>
-            <input
-              type="checkbox"
-              checked={item.done}
-              onChange={() => {
-                const tmp = tasks;
+            {showElement && (
+              <input
+                type="checkbox"
+                checked={item.done}
+                onChange={() => {
+                  const tmp = tasks;
 
-                tmp[index].done = !item.done;
+                  tmp[index].done = !item.done;
 
-                setTasks([...tmp]);
-              }}
-            />
+                  setTasks([...tmp]);
+                }}
+              />
+            )}
             {item.task}
-            <div className="delete" onClick={() => removeTask(item.id)}>
-              <RiDeleteBin5Fill />
-            </div>
+            {showElement && (
+              <div className="delete" onClick={() => removeTask(item.id)}>
+                <RiDeleteBin5Fill />
+              </div>
+            )}
           </div>
         );
       })}

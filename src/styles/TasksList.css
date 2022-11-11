@@ -12,3 +12,48 @@
     background: transparent;
     backdrop-filter: blur(10px);
 }
+
+.search-input {
+    width: 350px;
+    background: rgba(255, 253, 253, 0.995);
+    border: 2px solid burlywood;
+    font-size: 28px;
+    display: inline-block;
+    outline: none;
+    border-radius: 6px 0 0 6px;
+    ;
+  }
+  
+  .search-input {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+  
+  .search-input input {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  
+  .search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 6em;
+  }
+  
+  .search-btn {
+    position: relative;
+    border: 2px solid burlywood;
+    background-color: burlywood;
+    color: 000;
+    font-size: 28px;
+    display: inline-block;
+    outline: none;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  .search-btn:hover {
+   cursor:pointer;
+  }
