@@ -1,25 +1,28 @@
-ul{
-   text-align: left;
-   list-style: none;
-   font-size: 1.5em;
-   display: flex;
-   
+ul {
+  text-align: left;
+  list-style: none;
+  font-size: 1.5em;
+  display: flex;
 }
 ul li {
-    margin-right: 20px;
-    color:blanchedalmond;
-    
+  margin-right: 20px;
+  color: blanchedalmond;
 }
 
-a{
-    text-decoration: none;
-    
+a {
+  text-decoration: none;
 }
 
-a, a:visited, a:hover, a:active {
-    color: inherit;
-  }
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
 
-  .navbar {
-    margin: 2em 0em 0em 2em;
-  }
+.navbar {
+  margin: 2em 0em 0em 2em;
+}
+a:hover {
+  border-bottom: solid 3px beige;
+}

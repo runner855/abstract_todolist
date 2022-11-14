@@ -1,13 +1,30 @@
 .home {
-    margin-top: 5em;
+  margin-top: 5em;
 }
 
 .home-title {
-    color:beige;
-    font-size: 4em ;
-    
+  color: beige;
+  font-size: 4em;
 }
 
-.home-title{
-    text-align: center;
+.home-title {
+  text-align: center;
+  margin: 0.2em;
+  padding-left: 0;
+}
+
+.home {
+  border: solid 2px beige;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  margin-top: 10em;
+  border-radius: 3em;
+}
+
+div.home-title:hover {
+  color: black;
+}
+
+.home:hover {
+  background-color: burlywood;
 }

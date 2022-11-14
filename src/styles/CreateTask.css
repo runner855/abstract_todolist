@@ -15,6 +15,15 @@
   margin: 1em 0em 1em 0em;
   color: beige;
   font-size: 4em;
+  border: solid 0.1em beige;
+  border-radius: 1em;
+  background: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.title:hover {
+  background-color: burlywood;
+  color: black;
 }
 
 input {
@@ -40,6 +49,13 @@ a:hover {
   border-radius: solid 0.1em blue;
 }
 
+svg {
+  margin-left: 0.2em;
+}
+svg:hover {
+  cursor: pointer;
+}
+
 input[type="text"] {
   height: 2.5em;
   width: 18.75em;
@@ -51,7 +67,7 @@ input[type="checkbox"] {
   align-items: center;
   margin-bottom: -0.4em;
   margin-right: 0.9em;
-  height: 9em;
+  height: 2em;
 }
 
 .single-task {
